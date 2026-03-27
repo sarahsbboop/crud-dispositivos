@@ -93,13 +93,15 @@ function renderizar() {
 async function listarDispositivos() {
   try {
     const respostaHTTP = await fetch(URL_API);
+
     const dados = await respostaHTTP.json();
 
     dispositivos = dados;
 
     renderizar();
 
-    mostrarMensagem(dispositivos.length + ' dispositivos encontrados.', 'sucesso');
+    mostrarMensagem(dispositivos.length + ' dispositivos encontrados', 'sucesso');
+
   } catch (erro) {
     mostrarMensagem('Erro ao listar: ' + erro.message, 'erro');
   }
