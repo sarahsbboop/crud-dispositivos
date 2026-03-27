@@ -47,8 +47,10 @@ function limparFormulario() {
 // ============================================================
 
 function renderizar() {
+  // limpa a tabela
   corpoTabela.innerHTML = '';
 
+  // percorre o vetor
   for (let i = 0; i < dispositivos.length; i++) {
     const item = dispositivos[i];
 
@@ -61,12 +63,10 @@ function renderizar() {
     celulaNome.textContent = item.name;
 
     const celulaCor = document.createElement('td');
-    celulaCor.textContent =
-      item.data && item.data.color ? item.data.color : '—';
+    celulaCor.textContent = (item.data && item.data.color) ? item.data.color : '—';
 
     const celulaCapacidade = document.createElement('td');
-    celulaCapacidade.textContent =
-      item.data && item.data.capacity ? item.data.capacity : '—';
+    celulaCapacidade.textContent = (item.data && item.data.capacity) ? item.data.capacity : '—';
 
     const celulaPreco = document.createElement('td');
     if (item.data && item.data.price) {
@@ -87,7 +87,6 @@ function renderizar() {
     corpoTabela.appendChild(linha);
   }
 }
-
 // ============================================================
 // CRUD - PASSO 1
 // ============================================================
